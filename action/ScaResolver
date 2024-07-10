@@ -1,0 +1,54 @@
+#!/bin/bash
+
+set -e
+
+echo -e "\r\nExecuting SCAResolver in container: ${CONTAINER_TAG}"
+echo -e "\r\n"
+
+i=0
+reformed_args=()
+
+while [ ! -z ${1} ]; do
+    case $1 in
+        "-s")
+            reformed_args[$i]=$1
+            ((++i))
+            shift
+            SCAN_PATH=$(dirname $1)
+            reformed_args[$i]="/sandbox/input_sandbox"
+            ((++i))
+            shift
+            continue
+            ;;
+
+        "-r")
+            reformed_args[$i]=$1
+            ((++i))
+            shift
+            RESULT_PATH=$(dirname $1)
+            reformed_args[$i]="/sandbox/output/$(basename $1)"
+            ((++i))
+            shift
+            continue
+            ;;
+    esac
+
+    reformed_args[$i]=$1
+    ((++i))
+    shift
+done
+
+echo -e "\r\nSCAResolver reformed args: ${reformed_args[@]}"
+echo -e "\r\n"
+mkdir -p $RESULT_PATH
+echo -e "\r\nExecuting as $(whoami)"
+echo -e "\r\n"
+echo -e "\r\nHost output directory: $(stat -c "User:%U(%u) Group:%G(%g) %A" $RESULT_PATH)"
+echo -e "\r\n"
+echo -e "\r\nContainer output directory: $(docker run -t -v $RESULT_PATH:/sandbox/output --entrypoint=stat $CONTAINER_TAG -c "User:%U(%u) Group:%G(%g) %A" /sandbox/output)"
+echo -e "\r\n"
+echo -e "\r\nIf host and container UID/GID are mismatched, the SCAResolver container needs to be built using the Host UID/GID"
+echo -e "\r\n"
+
+docker run -t -v $SCAN_PATH:/sandbox/input -v $RESULT_PATH:/sandbox/output $CONTAINER_TAG ${reformed_args[@]}
+
