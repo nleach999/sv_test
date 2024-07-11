@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Env
         run: |
-          pwd
-          ls -l
           env
       
       - name: Fetch Code
