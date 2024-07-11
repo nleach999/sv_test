@@ -12,7 +12,10 @@ jobs:
           pwd
           ls -l
           env
-
+      
+      - name: Fetch Code
+        uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
+  
       - name: Test
         uses: checkmarx-ts/checkmarx-cxflow-plusplus-github-action@usability
         with:
