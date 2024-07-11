@@ -11,7 +11,9 @@ jobs:
         uses: checkmarx-ts/checkmarx-cxflow-plusplus-github-action@usability
         with:
           sast-log-level: DEBUG
-          cxflow-version: 1.6.39
-
-
-    
+          sast-url: ${{ env.SAST_BASE_URL }}
+          sast-team: /CxServer
+          sast-username: ${{ secrets.SAST_USERNAME}}
+          sast-password: ${{ secrets.SAST_PASSWORD}}
+          disable-sca-scan: true
+          project-name: sv_test-{branch}
