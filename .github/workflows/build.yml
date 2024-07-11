@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        uses: nleach999/plugin_test
+        uses: nleach999/plugin_test@master
         with:
           sast-log-level: DEBUG
 
