@@ -8,9 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Test
-        uses: ../action/action.yml
+        uses: nleach999/sv_test/action/action.yml
         with:
           action-root: ../action
           sast-log-level: DEBUG
-          
+
     
