@@ -14,7 +14,7 @@ jobs:
         uses: checkmarx-ts/checkmarx-cxflow-plusplus-github-action@usability
         with:
           sast-log-level: DEBUG
-          sast-url: $SAST_BASE_URL
+          sast-url: ${{ vars.SAST_BASE_URL }}
           sast-team: /CxServer
           sast-username: ${{ secrets.SAST_USERNAME}}
           sast-password: ${{ secrets.SAST_PASSWORD}}
