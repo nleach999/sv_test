@@ -5,6 +5,8 @@ on:
 
 jobs:
   run-action:
+    permissions:
+      security-events: write
     runs-on: ubuntu-latest
     steps:
       - name: Env
