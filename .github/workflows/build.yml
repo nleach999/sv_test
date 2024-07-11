@@ -11,5 +11,7 @@ jobs:
         uses: nleach999/plugin_test@master
         with:
           sast-log-level: DEBUG
+          cxflow-version: 1.6.39
+          
 
     
