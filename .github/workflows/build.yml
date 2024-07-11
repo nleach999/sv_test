@@ -8,7 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Env
-        run: env
+        run: |
+          pwd
+          ls -l
+          env
 
       - name: Test
         uses: checkmarx-ts/checkmarx-cxflow-plusplus-github-action@usability
