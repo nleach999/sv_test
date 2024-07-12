@@ -20,7 +20,7 @@ jobs:
         uses: checkmarx-ts/checkmarx-cxflow-plusplus-github-action@usability
         with:
           sast-log-level: DEBUG
-          disable-sca-scan: true
+          # disable-sca-scan: true
           sast-url: ${{ secrets.CX_SAST_URL }}
           sast-username: ${{ secrets.CX_SAST_USERNAME }}
           sast-password: ${{ secrets.CX_SAST_PASSWORD }}
