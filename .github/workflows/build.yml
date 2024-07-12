@@ -7,7 +7,7 @@ jobs:
   run-action:
     permissions:
       security-events: write
-    runs-on: sca-runner
+    runs-on: ubuntu-latest
     steps:
       - name: Env
         run: |
