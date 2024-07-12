@@ -21,3 +21,14 @@ jobs:
         with:
           sast-log-level: DEBUG
           disable-sca-scan: true
+          sast-url: ${{ secrets.CX_SAST_URL }}
+          sast-username: ${{ secrets.CX_SAST_USERNAME }}
+          sast-password: ${{ secrets.CX_SAST_PASSWORD }}
+          # sca-tenant: ${{ secrets.CX_SCA_TENANT }}
+          # sca-username: ${{ secrets.CX_SCA_USERNAME }}
+          # sca-password: ${{ secrets.CX_SCA_PASSWORD }}
+
+          
+
+
+
