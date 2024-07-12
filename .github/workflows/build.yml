@@ -27,6 +27,7 @@ jobs:
           sca-tenant: ${{ secrets.CX_SCA_TENANT }}
           sca-username: ${{ secrets.CX_SCA_USERNAME }}
           sca-password: ${{ secrets.CX_SCA_PASSWORD }}
+          scaresolver-local-path: /opt/scaresolver2
 
           
 
