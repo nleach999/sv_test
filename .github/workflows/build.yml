@@ -28,6 +28,7 @@ jobs:
           sca-username: ${{ secrets.CX_SCA_USERNAME }}
           sca-password: ${{ secrets.CX_SCA_PASSWORD }}
           scaresolver-local-path: /opt/scaresolver2
+          cxflow-version: 1.6.46
 
           
 
