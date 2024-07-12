@@ -16,13 +16,8 @@ jobs:
       - name: Fetch Code
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
   
-      - name: Test
+      - name: Test CxFlow++
         uses: checkmarx-ts/checkmarx-cxflow-plusplus-github-action@usability
         with:
           sast-log-level: DEBUG
-          sast-url: ${{ vars.SAST_BASE_URL }}
-          sast-team: /CxServer
-          sast-username: ${{ secrets.SAST_USERNAME}}
-          sast-password: ${{ secrets.SAST_PASSWORD}}
           disable-sca-scan: true
-          project-name: sv_test-{branch}
