@@ -33,7 +33,9 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: env
-        run: env
+        run: | 
+          env
+          ls -l /
       
   probe-macos:
     runs-on: macos-latest
@@ -41,7 +43,7 @@ jobs:
       - name: env
         run: |
           env
-          ls -l /etc | grep release
+          ls -l /
       
 
           
