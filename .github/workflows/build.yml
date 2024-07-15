@@ -43,7 +43,7 @@ jobs:
       - name: env
         run: |
           env
-          ls -l /etc
+          ls -l /etc/
       
 
           
