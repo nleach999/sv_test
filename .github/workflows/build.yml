@@ -28,7 +28,21 @@ jobs:
           sca-username: ${{ secrets.CX_SCA_USERNAME }}
           sca-password: ${{ secrets.CX_SCA_PASSWORD }}
           scaresolver-local-path: /opt/scaresolver2
-          cxflow-version: 1.7.0
+    
+  probe-windows:
+    runs-on: windows-latest
+    steps:
+      - name: env
+        run: env
+      
+  probe-macos:
+    runs-on: macos-latest
+    steps:
+      - name: env
+        run: |
+          env
+          ls -l /etc | grep release
+      
 
           
 
