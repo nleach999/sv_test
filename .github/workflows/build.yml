@@ -37,9 +37,9 @@ jobs:
           env
           ls -l /
           Expand-Archive -?
-          which wget
-          which unzip
-          
+          echo wget: $(which wget)
+          echo unzip: $(which unzip)
+          echo curl: $(which curl)
       
   probe-macos:
     runs-on: macos-latest
