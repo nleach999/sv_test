@@ -9,10 +9,7 @@ jobs:
       security-events: write
     runs-on: sca-runner
     steps:
-      - name: Env
-        run: |
-          env
-      
+     
       - name: Fetch Code
         uses: actions/checkout@f43a0e5ff2bd294095638e18286ca9a3d1956744
   
@@ -29,25 +26,25 @@ jobs:
           sca-password: ${{ secrets.CX_SCA_PASSWORD }}
           scaresolver-local-path: /opt/scaresolver2
     
-  probe-windows:
-    runs-on: windows-latest
-    steps:
-      - name: env
-        run: | 
-          env
-          ls -l /
-          Expand-Archive -?
-          echo wget: $(which wget)
-          echo unzip: $(which unzip)
-          echo curl: $(which curl)
+  # probe-windows:
+  #   runs-on: windows-latest
+  #   steps:
+  #     - name: env
+  #       run: | 
+  #         env
+  #         ls -l /
+  #         Expand-Archive -?
+  #         echo wget: $(which wget)
+  #         echo unzip: $(which unzip)
+  #         echo curl: $(which curl)
       
-  probe-macos:
-    runs-on: macos-latest
-    steps:
-      - name: env
-        run: |
-          env
-          ls -l /etc/
+  # probe-macos:
+  #   runs-on: macos-latest
+  #   steps:
+  #     - name: env
+  #       run: |
+  #         env
+  #         ls -l /etc/
       
 
           
