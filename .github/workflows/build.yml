@@ -8,6 +8,7 @@ jobs:
     permissions:
       security-events: write
     runs-on: ubuntu-latest
+    # runs-on: sca-runner
     steps:
      
       - name: Fetch Code
@@ -24,8 +25,8 @@ jobs:
           sca-tenant: ${{ secrets.CX_SCA_TENANT }}
           sca-username: ${{ secrets.CX_SCA_USERNAME }}
           sca-password: ${{ secrets.CX_SCA_PASSWORD }}
-          # build-container-tag: mcr.microsoft.com/dotnet/sdk:8.0
-          scaresolver-tag: cxnleach/scaresolver-netcore:latest
+          build-container-tag: mcr.microsoft.com/dotnet/sdk:8.0
+          # scaresolver-tag: cxnleach/scaresolver-netcore:latest
 
     
   # probe-windows:
